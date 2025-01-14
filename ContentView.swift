@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var history: [String] = ["", "", ""]
     
     @State private var score = 0
-    
+        
     
     var body: some View {
         ZStack {
@@ -75,11 +75,14 @@ struct ContentView: View {
                 VStack{
                     Text(history[2])
                         .font(.title2)
+                        .foregroundStyle(history[2] == "Correct" ? .green: history[2] == "Wrong" ? .red: .primary)
                     Text(history[1])
                         .font(.subheadline)
+                        .foregroundStyle(history[1] == "Correct" ? .green: history[1] == "Wrong" ? .red: .primary)
                         .opacity(0.8)
                     Text(history[0])
                         .font(.caption)
+                        .foregroundStyle(history[0] == "Correct" ? .green: history[0] == "Wrong" ? .red: .primary)
                         .opacity(0.5)
                 }
                 .foregroundStyle(.white)
